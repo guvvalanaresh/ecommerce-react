@@ -1,1 +1,8 @@
 @import 'tailwindcss';
+
+.cart-icon {
+    font-size: 25px;
+}
+.login-icon {
+    font-size: 20px;
+}

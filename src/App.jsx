@@ -1,15 +1,18 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import Home from './pages/Home'
+import Products from './pages/ProductListing'
 
 function App() {
 
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

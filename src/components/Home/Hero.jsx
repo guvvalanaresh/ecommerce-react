@@ -1,8 +1,8 @@
 import SimpleImageSlider from "react-simple-image-slider";
 
 const images = [
-  { url: "/ecommerce-2140603.jpg" },
-  { url: "/ecommerce-3640321.jpg" }
+  { url: "/banner-1.jpg" },
+  { url: "/banner-2.jpg" }
 ];
 
 const Hero = () => {

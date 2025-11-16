@@ -5,10 +5,15 @@ import { QuantitySelector } from "../components/ProductDetails/QuantitySelector"
 import { ReviewSection } from "../components/ProductDetails/ReviewSection";
 import { RelatedProductsSection } from "../components/ProductDetails/RelatedProductsSection";
 import { products } from "../data/products.js";
+import { useParams } from "react-router-dom";
 
 
 export default function ProductDetailPage() {
-    const product = products[0];
+    const { id } = useParams();
+    
+    const product = products.find((p) => p.id === parseInt(id)); 
+
+    // const product = products[0];
     const images = [product.image, product.image, product.image];
 
 
@@ -20,25 +25,25 @@ export default function ProductDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
 
-        {/* Images */}
-        <ImageGallery images={images} />
+            {/* Images */}
+            <ImageGallery images={images} />
 
 
-        {/* Product Info */}
-        <div>
-        <ProductInfo product={product} />
-        <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+            {/* Product Info */}
+            <div>
+                <ProductInfo product={product} />
+                <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
 
-        <div className="flex gap-4 mt-6">
-        <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">
-        Add to Cart
-        </button>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-        Buy Now
-        </button>
-        </div>
-        </div>
+                <div className="flex gap-4 mt-6">
+                    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">
+                        Add to Cart
+                    </button>
+                    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
         </div>
 
 

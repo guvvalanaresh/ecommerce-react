@@ -6,10 +6,12 @@ import '../../App.css'
 import { useNavigate } from "react-router-dom";
 import { useCart } from '../../context/CartContext'
 
+import { Flip, toast } from "react-toastify";
 
 export const ProductCard = ({ product }) => {
     const navigate = useNavigate();
     const { addToCart } = useCart()
+
 
     return (
     <div className="bg-white shadow-md p-4 hover:shadow-xl transition border border-gray-200 flex flex-col">
@@ -28,12 +30,27 @@ export const ProductCard = ({ product }) => {
 
 
         <div className="flex flex-col gap-3">
-                        <button
-                            className="flex justify-center w-full text-black py-1 mt-auto hover:bg-gray-300 transition cursor-pointer border"
-                            onClick={() => addToCart(product, 1)}
-                        >
-                                <FaCartPlus className="cart-icon" />
-                        </button>
+             <button
+                className="flex justify-center w-full text-black py-1 mt-auto hover:bg-gray-300 transition cursor-pointer border"
+                onClick={() => {
+                        addToCart(product, 1);
+                        toast.success("Added to cart", {
+                                position: "top-center",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: false,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                                transition: Flip,
+                            }
+                        );
+                    }
+                }
+            >
+                <FaCartPlus className="cart-icon" />
+            </button>
             <button className="w-full bg-black text-white py-2 mt-auto hover:bg-gray-800 transition text-sm cursor-pointer"
                     onClick={() => navigate(`/products/${product.id}`)}
             >

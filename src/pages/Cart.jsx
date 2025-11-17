@@ -81,12 +81,12 @@ const Cart = () => {
                                     </dl>
                                 </div>
 
-                                                                <button
-                                                                    onClick={() => navigate('/checkout')}
-                                                                    className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                                                                >
-                                                                    Proceed to Checkout
-                                                                </button>
+                                <button
+                                    onClick={() => navigate('/checkout')}
+                                    className="flex w-full items-center justify-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 cursor-pointer"
+                                >
+                                    Proceed to Checkout
+                                </button>
 
                                 <div className="flex items-center justify-center gap-2">
                                     <span className="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>

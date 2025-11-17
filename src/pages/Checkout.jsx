@@ -72,7 +72,7 @@ export default function Checkout() {
           </div>
 
           <div>
-            <button type="submit" disabled={submitting} className="mt-2 w-full bg-black text-white px-4 py-2 rounded">
+            <button type="submit" disabled={submitting} className="mt-2 w-full bg-green-700 text-white px-4 py-2 rounded">
               {submitting ? 'Placing Order...' : 'Place Order'}
             </button>
           </div>

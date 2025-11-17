@@ -34,6 +34,7 @@ export const ProductInfo = ({ product }) => {
             {/* Key Features */}
             {product.features && (
                 <ul className="list-disc pl-5 mt-3 text-gray-700">
+                    <h3 className="font-semibold text-lg mb-1 -ml-5">Features</h3>
                     {product.features.map((f, i) => (
                         <li key={i}>{f}</li>
                     ))}

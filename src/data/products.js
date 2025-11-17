@@ -9,7 +9,9 @@ export const products = [
     "rating": {
       "rate": 3.9,
       "count": 120
-    }
+    },
+    "discount": 50,
+    "features": ["Good", "Nice"]
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@ export const products = [
     "rating": {
       "rate": 4.1,
       "count": 259
-    }
+    },
+    "discount": 30
   },
   {
     "id": 3,

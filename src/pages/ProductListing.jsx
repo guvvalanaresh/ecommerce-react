@@ -3,6 +3,7 @@ import { products } from "../data/products.js";
 import { ProductCard } from "../components/ProductListing/ProductCard";
 import { Filters } from "../components/ProductListing/Filters";
 import { SortDropdown } from "../components/ProductListing/SortDropdown";
+import Navbar from "../components/Home/Navbar";
 
 
 export default function Products() {
@@ -26,7 +27,9 @@ export default function Products() {
 
 
     return (
-        <div className="max-w-7xl mx-auto p-5 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div>
+            <Navbar />
+            <div className="max-w-7xl mx-auto p-5 grid grid-cols-1 md:grid-cols-4 gap-6">
     
 
             {/* Filters */}
@@ -56,6 +59,7 @@ export default function Products() {
             </div>
 
 
+        </div>
         </div>
     );
 }

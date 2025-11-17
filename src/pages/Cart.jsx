@@ -7,7 +7,7 @@ const Cart = () => {
     return (
         <div>
             <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
-                <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+                <div className="mx-auto max-w-7xl px-4 2xl:px-0">
                     <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Shopping Cart</h2>
 
                     <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
@@ -82,7 +82,7 @@ const Cart = () => {
 
                                 <div className="flex items-center justify-center gap-2">
                                     <span className="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
-                                    <a href="#" title="" className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">
+                                    <a href="/products" title="" className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">
                                         Continue Shopping
                                     </a>
                                 </div>

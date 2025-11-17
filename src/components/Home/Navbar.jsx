@@ -3,9 +3,13 @@ import '../../App.css'
 import { FaCartPlus } from "react-icons/fa6";
 import { SlLogin } from "react-icons/sl";
 import { IoSearch } from "react-icons/io5";
+import { useCart } from '../../context/CartContext'
 
 
 const Navbar = () => {
+  const { cartItems = [] } = useCart() || {}
+  const totalCount = cartItems.reduce((sum, it) => sum + (it.quantity || 0), 0)
+
   return (
     <div>
       <div className='flex justify-around items-center p-5'>
@@ -23,10 +27,18 @@ const Navbar = () => {
               <p className='absolute right-48 text-gray-400'><IoSearch /></p>
           </div>
           <div>
-            <ul className='flex gap-6 relative'>
-              <a href=""><li className='cursor-pointer cart-icon'><FaCartPlus /></li></a>
-              <li className='absolute left-4 bottom-4 rounded-full z-0 px-1 text-xs font-semibold bg-red-600 text-white'>7</li>
-              <button><li className='cursor-pointer login-icon'><SlLogin /></li></button>
+            <ul className='flex gap-6 relative items-center'>
+              <li>
+                <a href="/cart" className='cursor-pointer cart-icon' aria-label="View cart"><FaCartPlus /></a>
+              </li>
+              {totalCount > 0 && (
+                <li className='absolute left-4 bottom-4 rounded-full z-0 px-1 text-xs font-semibold bg-red-600 text-white'>
+                  {totalCount}
+                </li>
+              )}
+              <li>
+                <button className='cursor-pointer login-icon' aria-label="Login"><SlLogin /></button>
+              </li>
             </ul>
           </div>
         </div>

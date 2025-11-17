@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Products from './pages/ProductListing'
 import ProductDetailPage from './pages/ProductDetails'
 import Cart from "./pages/Cart"
+import { Navbar } from 'flowbite-react'
 
 function App() {
 

@@ -6,18 +6,29 @@ import { ReviewSection } from "../components/ProductDetails/ReviewSection";
 import { RelatedProductsSection } from "../components/ProductDetails/RelatedProductsSection";
 import { products } from "../data/products.js";
 import { useParams } from "react-router-dom";
+import { useCart } from '../context/CartContext'
 
 
 export default function ProductDetailPage() {
     const { id } = useParams();
     
-    const product = products.find((p) => p.id === parseInt(id)); 
+    const product = products.find((p) => p.id === parseInt(id, 10)); 
 
-    // const product = products[0];
+    if (!product) {
+        return (
+            <div className="max-w-7xl mx-auto p-5">
+                <h2 className="text-2xl font-bold">Product not found</h2>
+                <p className="mt-2">The product you requested does not exist or the id is invalid.</p>
+            </div>
+        );
+    }
+
+    // placeholder images array (use real images if available)
     const images = [product.image, product.image, product.image];
 
 
     const [quantity, setQuantity] = useState(1);
+    const { addToCart } = useCart()
 
 
     return (
@@ -36,7 +47,10 @@ export default function ProductDetailPage() {
 
 
                 <div className="flex gap-4 mt-6">
-                    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800">
+                    <button
+                      className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800"
+                      onClick={() => addToCart(product, quantity)}
+                    >
                         Add to Cart
                     </button>
                     <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">

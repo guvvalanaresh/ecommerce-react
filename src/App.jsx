@@ -5,7 +5,8 @@ import Home from './pages/Home'
 import Products from './pages/ProductListing'
 import ProductDetailPage from './pages/ProductDetails'
 import Cart from "./pages/Cart"
-import { Navbar } from 'flowbite-react'
+import Checkout from './pages/Checkout'
+import OrderSuccess from './pages/OrderSuccess'
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </BrowserRouter>
   )

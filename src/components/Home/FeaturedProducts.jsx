@@ -1,9 +1,14 @@
 import React from "react"
 import { FaStar } from "react-icons/fa";
 import { products } from "../../data/products";     // importing products from our products.js file
+import { useCart } from "../../context/CartContext";
+import { Flip, toast } from "react-toastify";
 
 // Here creating the Card component for every product
 const ProductCard = ({ product }) => {
+
+  const { addToCart } = useCart();
+
   return (
     <div className="bg-white shadow-md p-4 hover:shadow-xl transition border border-gray-200 cursor-pointer flex flex-col">
 
@@ -34,7 +39,25 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Add to Cart */}
-      <button className="w-full bg-yellow-400 text-black py-2 mt-auto hover:bg-yellow-300 transition cursor-pointer">
+      <button className="w-full bg-yellow-400 text-black py-2 mt-auto hover:bg-yellow-300 transition cursor-pointer"
+              onClick={() => {
+                  addToCart(product, 1);
+                  toast.success("Added to cart", 
+                      {
+                          position: "top-center",
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: false,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: "light",
+                          transition: Flip,
+                        }
+                    );
+                }
+              }
+      >
         Add to Cart
       </button>
     </div>

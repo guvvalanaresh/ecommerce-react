@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ImageGallery } from "../components/ProductDetails/ImageGallery";
 import { ProductInfo } from "../components/ProductDetails/ProductInfo";
 import { QuantitySelector } from "../components/ProductDetails/QuantitySelector";
@@ -30,6 +30,9 @@ export default function ProductDetailPage() {
     const [quantity, setQuantity] = useState(1);
     const { addToCart } = useCart()
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     return (
     <div className="max-w-7xl mx-auto p-5">

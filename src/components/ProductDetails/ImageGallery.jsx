@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 export const ImageGallery = ({ images }) => {
     const [active, setActive] = useState(images[0]);
+
+    useEffect(() => {
+        setActive(images[0]);   // reset when product changes
+    }, [images]);
 
 
 return (

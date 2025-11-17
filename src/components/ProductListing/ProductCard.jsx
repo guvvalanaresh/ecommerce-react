@@ -17,11 +17,11 @@ export const ProductCard = ({ product }) => {
 
 
         <h3 className="mt-2 font-semibold line-clamp-2">{product.title}</h3>
-        <p className="text-lg font-bold mt-1">₹{product.price}</p>
+        <p className="text-lg font-bold mt-1 text-red-700">₹{product.price}</p>
 
 
         <div className="flex items-center mt-2 mb-2 text-sm text-gray-600">
-            <FaStar className="text-yellow-500" /> {product.rating.rate} ({product.rating.count})
+            <FaStar className="text-yellow-500 mr-1" /> {product.rating.rate} ({product.rating.count})
         </div>
 
 

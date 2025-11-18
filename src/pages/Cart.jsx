@@ -27,8 +27,9 @@ const Cart = () => {
                                                 <img className="h-20 w-20 object-contain" src={product.image} alt={product.title} />
                                             </div>
 
-                                            <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                                            <div className="w-full min-w-0 flex-1 space-y-2 md:order-2 md:max-w-md">
                                                 <p className="text-base font-medium text-gray-900 dark:text-white">{product.title}</p>
+                                                <p className="text-sm text-gray-500 dark:text-gray-400">{product.category}</p>
 
                                                 <div className="flex items-center gap-4">
                                                     <button
@@ -76,9 +77,35 @@ const Cart = () => {
 
                                 <div className="space-y-4">
                                     <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-                                        <dt className="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-                                        <dd className="text-base font-bold text-gray-900 dark:text-white">₹{getTotal().toFixed(2)}</dd>
+                                        <dt className="text-base font-normal text-gray-700 dark:text-gray-300">Subtotal</dt>
+                                        <dd className="text-base font-medium text-gray-900 dark:text-white">₹{getTotal().toFixed(2)}</dd>
                                     </dl>
+
+                                    {/** Tax and shipping */}
+                                    {(() => {
+                                        const subtotal = getTotal()
+                                        const tax = subtotal * 0.10
+                                        const shipping = 20
+                                        const grand = subtotal + tax + shipping
+                                        return (
+                                            <div>
+                                                <dl className="flex items-center justify-between gap-4">
+                                                    <dt className="text-sm text-gray-500">Tax (10%)</dt>
+                                                    <dd className="text-sm text-gray-700">₹{tax.toFixed(2)}</dd>
+                                                </dl>
+
+                                                <dl className="flex items-center justify-between gap-4">
+                                                    <dt className="text-sm text-gray-500">Shipping</dt>
+                                                    <dd className="text-sm text-gray-700">₹{shipping.toFixed(2)}</dd>
+                                                </dl>
+
+                                                <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 mt-2 dark:border-gray-700">
+                                                    <dt className="text-base font-bold text-gray-900 dark:text-white">Grand Total</dt>
+                                                    <dd className="text-base font-bold text-gray-900 dark:text-white">₹{grand.toFixed(2)}</dd>
+                                                </dl>
+                                            </div>
+                                        )
+                                    })()}
                                 </div>
 
                                 <button

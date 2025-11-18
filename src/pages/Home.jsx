@@ -10,8 +10,8 @@ export default function Home() {
     return (
         <div>
             <Navbar />
-            <Hero />
-            <FeaturedCategories />
+            {/* <Hero /> */}
+            {/* <FeaturedCategories /> */}
             <FeaturedProducts />
             <Footer />
         </div>

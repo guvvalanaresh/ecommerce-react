@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple vector logo: lightning + FLASHCART wordmark -->
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Flashcart</title>
+  <desc id="logoDesc">Flashcart logo with a lightning mark and wordmark</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#111827" stop-opacity="1" />
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- background rect (transparent) -->
+  <rect width="320" height="64" fill="none" />
+
+  <!-- lightning circle mark -->
+  <g transform="translate(12,8)">
+    <circle cx="24" cy="24" r="24" fill="#F59E0B" />
+    <path d="M18 16 L30 16 L24 32 L36 32 L20 48 L24 34 L18 34 Z" fill="#0F172A" transform="translate(0,0)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(64,40)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="20" font-weight="700" fill="#0F172A">FLASH</text>
+    <text x="70" y="0" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-size="20" font-weight="700" fill="#111827" opacity="0.85">CART</text>
+  </g>
+
+</svg>

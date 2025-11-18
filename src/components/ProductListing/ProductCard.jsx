@@ -15,8 +15,8 @@ export const ProductCard = ({ product }) => {
 
     return (
     <div className="bg-white shadow-md p-4 hover:shadow-xl transition border border-gray-200 flex flex-col">
-        <div className="w-full h-48 flex items-center justify-center overflow-hidden">
-            <img src={product.image} alt={product.title} className="h-full object-contain" />
+        <div className="w-full h-40 sm:h-44 md:h-48 flex items-center justify-center overflow-hidden">
+            <img src={product.image} alt={product.title} className="max-h-full object-contain" />
         </div>
 
 

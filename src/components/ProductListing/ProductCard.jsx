@@ -25,7 +25,7 @@ export const ProductCard = ({ product }) => {
 
 
         <div className="flex items-center mt-2 mb-2 text-sm text-gray-600">
-            <FaStar className="text-yellow-500 mr-1" /> {product.rating.rate} ({product.rating.count})
+            <FaStar className="text-yellow-500 mr-1" /> {product.rating.rate} (<p className="text-blue-500">{product.rating.count}</p>)
         </div>
 
 

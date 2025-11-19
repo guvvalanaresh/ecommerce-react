@@ -7,7 +7,7 @@ import { RelatedProductsSection } from "../components/ProductDetails/RelatedProd
 import { products } from "../data/products.js";
 import { useParams } from "react-router-dom";
 import { useCart } from '../context/CartContext'
-
+import {Flip , toast } from "react-toastify"
 
 export default function ProductDetailPage() {
     const { id } = useParams();
@@ -52,7 +52,22 @@ export default function ProductDetailPage() {
                 <div className="flex gap-4 mt-6">
                     <button
                       className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800"
-                      onClick={() => addToCart(product, quantity)}
+                      onClick={() => {
+                        addToCart(product, quantity);
+                        toast.success("Added to cart", {
+                                position: "top-center",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: false,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                                transition: Flip,
+                            }
+                        );
+                    }
+                }
                     >
                         Add to Cart
                     </button>

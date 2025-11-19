@@ -17,6 +17,12 @@ export default function Checkout() {
 
   const [submitting, setSubmitting] = useState(false)
 
+  // compute totals same as Cart page
+  const subtotal = getTotal()
+  const tax = subtotal * 0.10
+  const shipping = 20
+  const grandTotal = subtotal + tax + shipping
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handlePlaceOrder = (e) => {
@@ -97,9 +103,26 @@ export default function Checkout() {
                 </div>
               ))}
 
-              <div className="border-t pt-3 mt-3 flex justify-between font-bold">
-                <div>Total</div>
-                <div>₹{getTotal().toFixed(2)}</div>
+              <div className="border-t pt-3 mt-3 space-y-2">
+                <div className="flex justify-between">
+                  <div className="text-sm text-gray-600">Subtotal</div>
+                  <div className="text-sm">₹{subtotal.toFixed(2)}</div>
+                </div>
+
+                <div className="flex justify-between">
+                  <div className="text-sm text-gray-600">Tax (10%)</div>
+                  <div className="text-sm">₹{tax.toFixed(2)}</div>
+                </div>
+
+                <div className="flex justify-between">
+                  <div className="text-sm text-gray-600">Shipping</div>
+                  <div className="text-sm">₹{shipping.toFixed(2)}</div>
+                </div>
+
+                <div className="flex justify-between font-bold text-base border-t pt-2">
+                  <div>Grand Total</div>
+                  <div>₹{grandTotal.toFixed(2)}</div>
+                </div>
               </div>
             </div>
           )}
